@@ -1,0 +1,38 @@
+# === Secrets: never commit ===
+.env
+*.env
+!.env.example
+.auth_secret
+*.secret
+
+# === Local-only data pack: never commit (see README) ===
+data/
+*.db
+*.sqlite
+*.sqlite3
+*.zip
+
+# === Python ===
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+*.egg-info/
+
+# === Node / Vite ===
+node_modules/
+frontend/dist/
+dist/
+*.local
+
+# === Editor / OS ===
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# === TypeScript build artifacts ===
+*.tsbuildinfo
+frontend/vite.config.js
+frontend/vite.config.d.ts

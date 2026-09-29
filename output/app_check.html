@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Campus Customs — App Check</title>
+    <style>
+      :root {
+        --yale-blue: #00356b;
+        --yale-blue-dark: #002140;
+        --accent: #bd9b60;
+        --ink: #12263a;
+        --muted: #5b6b7b;
+        --line: #e2e8f0;
+        --bg: #f7f9fc;
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Georgia, "Times New Roman", serif;
+        background: var(--bg);
+        color: var(--ink);
+        line-height: 1.6;
+      }
+      header {
+        background: linear-gradient(135deg, var(--yale-blue), var(--yale-blue-dark));
+        color: #fff;
+        padding: 2rem 1.5rem;
+        border-bottom: 4px solid var(--accent);
+      }
+      header .wrap { max-width: 960px; margin: 0 auto; }
+      header h1 { margin: 0 0 0.25rem; font-size: 2rem; }
+      header p { margin: 0; color: #dbe6f3; }
+      main { max-width: 960px; margin: 0 auto; padding: 1.5rem; }
+      .intro {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-left: 4px solid var(--accent);
+        border-radius: 10px;
+        padding: 1rem 1.25rem;
+        margin-bottom: 1.5rem;
+        font-size: 0.98rem;
+      }
+      .check {
+        background: #fff;
+        border: 1px solid var(--line);
+        border-radius: 12px;
+        padding: 1.25rem 1.5rem 1.5rem;
+        margin-bottom: 1.75rem;
+        box-shadow: 0 6px 20px rgba(0, 33, 64, 0.06);
+      }
+      .check h2 {
+        color: var(--yale-blue);
+        margin: 0 0 0.15rem;
+        font-size: 1.35rem;
+      }
+      .badge {
+        display: inline-block;
+        background: var(--yale-blue);
+        color: #fff;
+        font-size: 0.72rem;
+        font-family: Arial, sans-serif;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        font-weight: 700;
+        padding: 0.15rem 0.55rem;
+        border-radius: 999px;
+        vertical-align: middle;
+        margin-left: 0.4rem;
+      }
+      .check p { margin: 0.5rem 0 1rem; }
+      .shot {
+        width: 100%;
+        border: 1px solid var(--line);
+        border-radius: 10px;
+        display: block;
+        margin: 0.5rem 0;
+        box-shadow: 0 4px 14px rgba(0, 33, 64, 0.1);
+      }
+      .shot.narrow { max-width: 420px; }
+      .row { display: flex; gap: 1rem; flex-wrap: wrap; align-items: flex-start; }
+      .row .col { flex: 1; min-width: 280px; }
+      .caption { font-size: 0.85rem; color: var(--muted); margin: 0.25rem 0 0; }
+      footer {
+        max-width: 960px;
+        margin: 0 auto;
+        padding: 1rem 1.5rem 3rem;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      code {
+        background: #eef2f7;
+        padding: 0.1rem 0.35rem;
+        border-radius: 4px;
+        font-size: 0.9em;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <div class="wrap">
+        <h1>Campus Customs — App Check</h1>
+        <p>Live-site verification of the Yale Bulldog Blue shop &amp; AI assistant.</p>
+      </div>
+    </header>
+
+    <main>
+      <div class="intro">
+        This page documents a quick check of the live site after our latest round of
+        improvements. Each section shows a feature working, with a screenshot from the
+        running app and a short note on what it proves. (Campus Customs here is a
+        student class-project demo — not a real store.)
+      </div>
+
+      <!-- Check 1 -->
+      <section class="check">
+        <h2>1. Chat checks live inventory <span class="badge">AI + database</span></h2>
+        <p>
+          We asked the assistant, <em>"How many Basic Hoodie Big Yale are left in
+          size XL?"</em> It looked the answer up in the database in real time and
+          replied <strong>"2 left in size XL"</strong> — and surfaced the product
+          card with its price. This proves the chatbot gives honest, up-to-the-minute
+          stock and price answers drawn from the actual catalogue, not guesses.
+        </p>
+        <img class="shot narrow" src="app_check_images/inventory.png"
+             alt="Chat answering an inventory question" />
+        <p class="caption">
+          The assistant reads stock live, so as items sell the numbers it reports go
+          down automatically.
+        </p>
+      </section>
+
+      <!-- Check 2 -->
+      <section class="check">
+        <h2>2. Chat search updates the page <span class="badge">dynamic UI</span></h2>
+        <p>
+          Saying <em>"Show me your hoodies"</em> in the chat instantly updates the
+          website: the Products page switches to a "From your chat" view showing
+          exactly the <strong>27 matching hoodies</strong> the assistant found. Every
+          match is a normal product card, so clicking one still opens its full detail
+          page. This proves the conversation drives what the shopper sees.
+        </p>
+        <img class="shot" src="app_check_images/chat_search.png"
+             alt="Products page updated to show hoodies from the chat" />
+        <p class="caption">
+          The navy banner confirms the page is showing the assistant's matches for
+          the exact question that was asked.
+        </p>
+      </section>
+
+      <!-- Check 3 -->
+      <section class="check">
+        <h2>3. Usability: Yale Trivia earns a discount <span class="badge">engagement</span></h2>
+        <p>
+          A signed-in shopper can play a three-question Yale trivia game (each harder
+          than the last). Answering all three correctly awards a
+          <strong>one-time 10% coupon</strong> with a unique, Yale-themed code, which
+          applies at checkout. This feature builds brand affinity and gives shoppers a
+          fun reason to come back and buy.
+        </p>
+        <div class="row">
+          <div class="col">
+            <img class="shot" src="app_check_images/quiz_questions.png"
+                 alt="The three trivia questions with difficulty badges" />
+            <p class="caption">
+              Three questions, labeled Medium → Hard → Expert.
+            </p>
+          </div>
+          <div class="col">
+            <img class="shot" src="app_check_images/quiz_win.png"
+                 alt="Winning screen showing the unique coupon code" />
+            <p class="caption">
+              All correct → a unique code (e.g. <code>HANDSOMEDAN-28ZA8X</code>).
+            </p>
+          </div>
+        </div>
+        <img class="shot narrow" src="app_check_images/coupon_checkout.png"
+             alt="Coupon applied at checkout showing 10% off" />
+        <p class="caption">
+          The won coupon applied at checkout — <strong>10% off</strong> ($68.00 →
+          −$6.80). Coupons are single-use and tied to the shopper's account.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      Campus Customs is a student class project — a demo build, not a real store, and
+      not affiliated with Yale University. No real orders or payments are processed.
+    </footer>
+  </body>
+</html>
